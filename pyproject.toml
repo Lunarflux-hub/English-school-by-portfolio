@@ -1,0 +1,17 @@
+[project]
+name = "school-english"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "KeylongKayser", email = "KeylongKayser@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "django>=6.1.1",
+    "psycopg2-binary>=2.9.13",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+school-english = "school_english:main"

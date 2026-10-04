@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -56,10 +57,22 @@ cover/
 *.pot
 
 # Django stuff:
+=======
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Django
+>>>>>>> 151e5f6 (feat(users): add custom User model)
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+<<<<<<< HEAD
 
 # Flask stuff:
 instance/
@@ -216,3 +229,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+=======
+media/
+staticfiles/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+*.pid
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+>>>>>>> 151e5f6 (feat(users): add custom User model)
