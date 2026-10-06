@@ -1,0 +1,19 @@
+{# noinspection DjangoUnresolvedTemplateReference, HtmlUnknownTarget #}
+
+<div class="address-box">
+    <p class="default-address">Account Information</p>
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+    <p>{{ user.email }}</p>
+    <p>Commercial communications: {% if user.marketing_consent %}Yes{% else %}No{% endif %}</p>
+    <p>Personal data consent: {% if user.personaldata_consent %}Yes{% else %}No{% endif %}</p>
+
+    <div class="button-container">
+        <button hx-get="{% url 'users:edit_account_details' %}"
+                hx-target="#account-details-content"
+                hx-swap="innerHTML">
+            Edit
+        </button>
+    </div>
+</div>
+
+<div id="account-details-content"></div>

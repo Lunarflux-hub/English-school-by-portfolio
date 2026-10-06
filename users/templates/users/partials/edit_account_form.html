@@ -1,0 +1,30 @@
+{# noinspection DjangoUnresolvedTemplateReference, HtmlUnknownTarget #}
+
+<div class="address-box">
+    <form hx-post="{% url 'users:update_account_details' %}"
+          hx-target="#account-details-content"
+          hx-swap="innerHTML">
+        {% csrf_token %}
+
+        {% for field in form %}
+            {# Показываем все поля, кроме email. Если хочешь менять и email — убери эту проверку #}
+            {% if field.name != 'email' %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error">{{ field.errors }}</div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <div class="button-container">
+            <button type="submit">Update</button>
+            <button hx-get="{% url 'users:account_details' %}"
+                    hx-target="#account-details-content"
+                    hx-swap="innerHTML"
+                    type="button">Cancel</button>
+        </div>
+    </form>
+</div>
